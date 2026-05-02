@@ -1,0 +1,1900 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">  &lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1">  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</p>
+<p class="p1">  &lt;title&gt;Likeminded Group Travel&lt;/title&gt;</p>
+<p class="p1">  &lt;link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet"/&gt;</p>
+<p class="p1">  &lt;style&gt;</p>
+<p class="p1">    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1">```</p>
+<p class="p1">:root {</p>
+<p class="p1">  --terracotta: #C4622D;</p>
+<p class="p1">  --terracotta-light: #D4784A;</p>
+<p class="p1">  --terracotta-dark: #A04E22;</p>
+<p class="p1">  --sand: #E8D5B7;</p>
+<p class="p1">  --sand-light: #FAF7F2;</p>
+<p class="p1">  --sand-mid: #F0E6D3;</p>
+<p class="p1">  --ocean: #1B3A4B;</p>
+<p class="p1">  --ocean-light: #2A5268;</p>
+<p class="p1">  --warm-white: #FAF7F2;</p>
+<p class="p1">  --text-dark: #2C1810;</p>
+<p class="p1">  --text-mid: #5C3D2E;</p>
+<p class="p1">  --text-light: #8B6954;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">html { scroll-behavior: smooth; }</p>
+<p class="p2"><br></p>
+<p class="p1">body {</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  background: var(--warm-white);</p>
+<p class="p1">  color: var(--text-dark);</p>
+<p class="p1">  overflow-x: hidden;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">h1, h2, h3, h4 {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-weight: 400;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── NAV ── */</p>
+<p class="p1">nav {</p>
+<p class="p1">  position: fixed;</p>
+<p class="p1">  top: 0; left: 0; right: 0;</p>
+<p class="p1">  z-index: 100;</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">  justify-content: space-between;</p>
+<p class="p1">  padding: 1.2rem 4rem;</p>
+<p class="p1">  background: rgba(250, 247, 242, 0.95);</p>
+<p class="p1">  backdrop-filter: blur(8px);</p>
+<p class="p1">  border-bottom: 1px solid rgba(196, 98, 45, 0.15);</p>
+<p class="p1">  transition: box-shadow 0.3s;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">nav.scrolled { box-shadow: 0 2px 20px rgba(44, 24, 16, 0.08); }</p>
+<p class="p2"><br></p>
+<p class="p1">.nav-logo {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 1.3rem;</p>
+<p class="p1">  font-weight: 500;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  letter-spacing: 0.04em;</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.nav-logo span {</p>
+<p class="p1">  display: block;</p>
+<p class="p1">  font-size: 0.6rem;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  letter-spacing: 0.18em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--text-light);</p>
+<p class="p1">  margin-top: -2px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.nav-links {</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  gap: 2.5rem;</p>
+<p class="p1">  list-style: none;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.nav-links a {</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  font-weight: 400;</p>
+<p class="p1">  letter-spacing: 0.14em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">  transition: color 0.2s;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.nav-links a:hover { color: var(--terracotta); }</p>
+<p class="p2"><br></p>
+<p class="p1">.nav-cta {</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">  color: var(--warm-white) !important;</p>
+<p class="p1">  padding: 0.6rem 1.4rem !important;</p>
+<p class="p1">  border-radius: 2px;</p>
+<p class="p1">  transition: background 0.2s !important;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.nav-cta:hover { background: var(--terracotta-dark) !important; color: var(--warm-white) !important; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── PAGES ── */</p>
+<p class="p1">.page { display: none; padding-top: 80px; min-height: 100vh; }</p>
+<p class="p1">.page.active { display: block; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── HERO ── */</p>
+<p class="p1">.hero {</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">  min-height: calc(100vh - 80px);</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">  overflow: hidden;</p>
+<p class="p1">  background: var(--ocean);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-bg {</p>
+<p class="p1">  position: absolute;</p>
+<p class="p1">  inset: 0;</p>
+<p class="p1">  background: </p>
+<p class="p1">    radial-gradient(ellipse at 70% 50%, rgba(196, 98, 45, 0.25) 0%, transparent 60%),</p>
+<p class="p1">    radial-gradient(ellipse at 20% 80%, rgba(232, 213, 183, 0.15) 0%, transparent 50%),</p>
+<p class="p1">    var(--ocean);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* Sand dune SVG background */</p>
+<p class="p1">.hero-dune {</p>
+<p class="p1">  position: absolute;</p>
+<p class="p1">  bottom: 0;</p>
+<p class="p1">  left: 0;</p>
+<p class="p1">  right: 0;</p>
+<p class="p1">  height: 55%;</p>
+<p class="p1">  opacity: 0.12;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-content {</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">  z-index: 2;</p>
+<p class="p1">  max-width: 700px;</p>
+<p class="p1">  padding: 4rem 4rem 4rem 8rem;</p>
+<p class="p1">  animation: fadeUp 1.2s ease forwards;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">@keyframes fadeUp {</p>
+<p class="p1">  from { opacity: 0; transform: translateY(30px); }</p>
+<p class="p1">  to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-eyebrow {</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.7rem;</p>
+<p class="p1">  font-weight: 400;</p>
+<p class="p1">  letter-spacing: 0.2em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--terracotta-light);</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">  gap: 0.8rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-eyebrow::before {</p>
+<p class="p1">  content: '';</p>
+<p class="p1">  display: block;</p>
+<p class="p1">  width: 2rem;</p>
+<p class="p1">  height: 1px;</p>
+<p class="p1">  background: var(--terracotta-light);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero h1 {</p>
+<p class="p1">  font-size: clamp(3rem, 6vw, 5.5rem);</p>
+<p class="p1">  line-height: 1.05;</p>
+<p class="p1">  color: var(--warm-white);</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero h1 em {</p>
+<p class="p1">  font-style: normal;</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-sub {</p>
+<p class="p1">  font-size: 1rem;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.75);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  max-width: 520px;</p>
+<p class="p1">  margin-bottom: 3rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.hero-buttons {</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  gap: 1rem;</p>
+<p class="p1">  flex-wrap: wrap;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-primary {</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">  color: var(--warm-white);</p>
+<p class="p1">  padding: 1rem 2.2rem;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  font-weight: 500;</p>
+<p class="p1">  letter-spacing: 0.14em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  border: none;</p>
+<p class="p1">  cursor: pointer;</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">  display: inline-block;</p>
+<p class="p1">  transition: background 0.2s, transform 0.2s;</p>
+<p class="p1">  border-radius: 2px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); }</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-outline {</p>
+<p class="p1">  background: transparent;</p>
+<p class="p1">  color: var(--warm-white);</p>
+<p class="p1">  padding: 1rem 2.2rem;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  font-weight: 500;</p>
+<p class="p1">  letter-spacing: 0.14em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  border: 1px solid rgba(250, 247, 242, 0.4);</p>
+<p class="p1">  cursor: pointer;</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">  display: inline-block;</p>
+<p class="p1">  transition: border-color 0.2s, transform 0.2s;</p>
+<p class="p1">  border-radius: 2px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-outline:hover { border-color: var(--warm-white); transform: translateY(-1px); }</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-terracotta-outline {</p>
+<p class="p1">  background: transparent;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  padding: 0.9rem 2rem;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  font-weight: 500;</p>
+<p class="p1">  letter-spacing: 0.14em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  border: 1px solid var(--terracotta);</p>
+<p class="p1">  cursor: pointer;</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">  display: inline-block;</p>
+<p class="p1">  transition: all 0.2s;</p>
+<p class="p1">  border-radius: 2px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-terracotta-outline:hover {</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">  color: var(--warm-white);</p>
+<p class="p1">  transform: translateY(-1px);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── SECTIONS ── */</p>
+<p class="p1">section { padding: 6rem 4rem; }</p>
+<p class="p2"><br></p>
+<p class="p1">.section-inner { max-width: 1100px; margin: 0 auto; }</p>
+<p class="p2"><br></p>
+<p class="p1">.section-eyebrow {</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.68rem;</p>
+<p class="p1">  font-weight: 400;</p>
+<p class="p1">  letter-spacing: 0.2em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">  gap: 0.8rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.section-eyebrow::before {</p>
+<p class="p1">  content: '';</p>
+<p class="p1">  display: block;</p>
+<p class="p1">  width: 1.5rem;</p>
+<p class="p1">  height: 1px;</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.section-title {</p>
+<p class="p1">  font-size: clamp(2rem, 4vw, 3.2rem);</p>
+<p class="p1">  line-height: 1.15;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.section-body {</p>
+<p class="p1">  font-size: 1rem;</p>
+<p class="p1">  line-height: 1.9;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  max-width: 660px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── WHO WE ARE ── */</p>
+<p class="p1">.who-we-are {</p>
+<p class="p1">  background: var(--sand-mid);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.who-inner {</p>
+<p class="p1">  max-width: 1100px;</p>
+<p class="p1">  margin: 0 auto;</p>
+<p class="p1">  display: grid;</p>
+<p class="p1">  grid-template-columns: 1fr 1fr;</p>
+<p class="p1">  gap: 6rem;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dune-illustration {</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">  height: 380px;</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">  justify-content: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dune-circle {</p>
+<p class="p1">  width: 320px;</p>
+<p class="p1">  height: 320px;</p>
+<p class="p1">  border-radius: 50%;</p>
+<p class="p1">  background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-light) 40%, var(--sand) 100%);</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">  overflow: hidden;</p>
+<p class="p1">  box-shadow: 0 20px 60px rgba(196, 98, 45, 0.3);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dune-circle::after {</p>
+<p class="p1">  content: '';</p>
+<p class="p1">  position: absolute;</p>
+<p class="p1">  bottom: 0; left: 0; right: 0;</p>
+<p class="p1">  height: 60%;</p>
+<p class="p1">  background: rgba(44, 24, 16, 0.15);</p>
+<p class="p1">  clip-path: ellipse(55% 100% at 50% 100%);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── TWO PATHS ── */</p>
+<p class="p1">.two-paths { background: var(--warm-white); }</p>
+<p class="p2"><br></p>
+<p class="p1">.paths-grid {</p>
+<p class="p1">  display: grid;</p>
+<p class="p1">  grid-template-columns: 1fr 1fr;</p>
+<p class="p1">  gap: 2rem;</p>
+<p class="p1">  margin-top: 3rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.path-card {</p>
+<p class="p1">  background: var(--ocean);</p>
+<p class="p1">  padding: 3rem;</p>
+<p class="p1">  border-radius: 4px;</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">  overflow: hidden;</p>
+<p class="p1">  transition: transform 0.3s;</p>
+<p class="p1">  cursor: pointer;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.path-card:hover { transform: translateY(-4px); }</p>
+<p class="p2"><br></p>
+<p class="p1">.path-card::before {</p>
+<p class="p1">  content: '';</p>
+<p class="p1">  position: absolute;</p>
+<p class="p1">  bottom: 0; right: 0;</p>
+<p class="p1">  width: 180px; height: 180px;</p>
+<p class="p1">  border-radius: 50%;</p>
+<p class="p1">  background: rgba(196, 98, 45, 0.15);</p>
+<p class="p1">  transform: translate(40%, 40%);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.path-icon {</p>
+<p class="p1">  font-size: 2rem;</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.path-card h3 {</p>
+<p class="p1">  font-size: 1.8rem;</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">  line-height: 1.2;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.path-card p {</p>
+<p class="p1">  font-size: 0.9rem;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.75);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 2rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── WHY LIKEMINDED ── */</p>
+<p class="p1">.why { background: var(--sand-light); }</p>
+<p class="p2"><br></p>
+<p class="p1">.why-grid {</p>
+<p class="p1">  display: grid;</p>
+<p class="p1">  grid-template-columns: repeat(2, 1fr);</p>
+<p class="p1">  gap: 3rem;</p>
+<p class="p1">  margin-top: 3rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.why-item {</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  gap: 1.5rem;</p>
+<p class="p1">  align-items: flex-start;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.why-num {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 3rem;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  opacity: 0.3;</p>
+<p class="p1">  line-height: 1;</p>
+<p class="p1">  flex-shrink: 0;</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.why-item h4 {</p>
+<p class="p1">  font-size: 1.15rem;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  margin-bottom: 0.5rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.why-item p {</p>
+<p class="p1">  font-size: 0.9rem;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── FOUNDER PREVIEW ── */</p>
+<p class="p1">.founder-preview {</p>
+<p class="p1">  background: var(--ocean);</p>
+<p class="p1">  padding: 6rem 4rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.founder-inner {</p>
+<p class="p1">  max-width: 1100px;</p>
+<p class="p1">  margin: 0 auto;</p>
+<p class="p1">  display: grid;</p>
+<p class="p1">  grid-template-columns: 1fr 1.5fr;</p>
+<p class="p1">  gap: 6rem;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.founder-label {</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.68rem;</p>
+<p class="p1">  letter-spacing: 0.2em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--terracotta-light);</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.founder-preview h2 {</p>
+<p class="p1">  font-size: 2.8rem;</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">  line-height: 1.15;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.founder-preview p {</p>
+<p class="p1">  font-size: 0.95rem;</p>
+<p class="p1">  line-height: 1.9;</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.75);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 2rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.founder-visual {</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">  height: 400px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.founder-block {</p>
+<p class="p1">  width: 280px;</p>
+<p class="p1">  height: 340px;</p>
+<p class="p1">  background: linear-gradient(160deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);</p>
+<p class="p1">  border-radius: 4px;</p>
+<p class="p1">  position: absolute;</p>
+<p class="p1">  top: 0; left: 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.founder-block-2 {</p>
+<p class="p1">  width: 200px;</p>
+<p class="p1">  height: 240px;</p>
+<p class="p1">  background: rgba(232, 213, 183, 0.1);</p>
+<p class="p1">  border: 1px solid rgba(232, 213, 183, 0.2);</p>
+<p class="p1">  border-radius: 4px;</p>
+<p class="p1">  position: absolute;</p>
+<p class="p1">  bottom: 0; right: 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── CTA BANNER ── */</p>
+<p class="p1">.cta-banner {</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">  padding: 5rem 4rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.cta-banner h2 {</p>
+<p class="p1">  font-size: clamp(2rem, 4vw, 3rem);</p>
+<p class="p1">  color: var(--warm-white);</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.cta-banner p {</p>
+<p class="p1">  font-size: 1rem;</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.85);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 2.5rem;</p>
+<p class="p1">  max-width: 500px;</p>
+<p class="p1">  margin-left: auto;</p>
+<p class="p1">  margin-right: auto;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-white {</p>
+<p class="p1">  background: var(--warm-white);</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  padding: 1rem 2.2rem;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  font-weight: 500;</p>
+<p class="p1">  letter-spacing: 0.14em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  border: none;</p>
+<p class="p1">  cursor: pointer;</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">  display: inline-block;</p>
+<p class="p1">  transition: all 0.2s;</p>
+<p class="p1">  border-radius: 2px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-white:hover { background: var(--sand); transform: translateY(-1px); }</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-white-outline {</p>
+<p class="p1">  background: transparent;</p>
+<p class="p1">  color: var(--warm-white);</p>
+<p class="p1">  padding: 1rem 2.2rem;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  font-weight: 500;</p>
+<p class="p1">  letter-spacing: 0.14em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  border: 1px solid rgba(250, 247, 242, 0.6);</p>
+<p class="p1">  cursor: pointer;</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">  display: inline-block;</p>
+<p class="p1">  transition: all 0.2s;</p>
+<p class="p1">  border-radius: 2px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-white-outline:hover { border-color: var(--warm-white); transform: translateY(-1px); }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── ABOUT PAGE ── */</p>
+<p class="p1">.about-hero {</p>
+<p class="p1">  background: var(--ocean);</p>
+<p class="p1">  padding: 6rem 4rem 5rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.about-hero h1 {</p>
+<p class="p1">  font-size: clamp(2.2rem, 5vw, 4rem);</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  line-height: 1.15;</p>
+<p class="p1">  max-width: 800px;</p>
+<p class="p1">  margin: 0 auto 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.about-hero .subtitle {</p>
+<p class="p1">  font-size: 0.8rem;</p>
+<p class="p1">  letter-spacing: 0.18em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--terracotta-light);</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.about-story { background: var(--warm-white); }</p>
+<p class="p2"><br></p>
+<p class="p1">.story-block {</p>
+<p class="p1">  max-width: 720px;</p>
+<p class="p1">  margin: 0 auto;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.story-block h2 {</p>
+<p class="p1">  font-size: 2.2rem;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.story-block p {</p>
+<p class="p1">  font-size: 1rem;</p>
+<p class="p1">  line-height: 1.95;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.story-divider {</p>
+<p class="p1">  width: 3rem;</p>
+<p class="p1">  height: 1px;</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">  margin: 3rem auto;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.pull-quote {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 1.8rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  line-height: 1.4;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">  padding: 2rem 0;</p>
+<p class="p1">  border-top: 1px solid var(--sand);</p>
+<p class="p1">  border-bottom: 1px solid var(--sand);</p>
+<p class="p1">  margin: 3rem 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── SOLO PAGE ── */</p>
+<p class="p1">.solo-hero {</p>
+<p class="p1">  background: linear-gradient(135deg, var(--ocean) 0%, #0F2535 100%);</p>
+<p class="p1">  padding: 6rem 4rem 5rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.solo-hero h1 {</p>
+<p class="p1">  font-size: clamp(2.2rem, 5vw, 4rem);</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  line-height: 1.15;</p>
+<p class="p1">  max-width: 700px;</p>
+<p class="p1">  margin: 0 auto 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.solo-hero p {</p>
+<p class="p1">  font-size: 1.05rem;</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.75);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  max-width: 560px;</p>
+<p class="p1">  margin: 0 auto 2.5rem;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.niches-grid {</p>
+<p class="p1">  display: grid;</p>
+<p class="p1">  grid-template-columns: repeat(3, 1fr);</p>
+<p class="p1">  gap: 1.5rem;</p>
+<p class="p1">  margin-top: 3rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.niche-card {</p>
+<p class="p1">  background: var(--sand-mid);</p>
+<p class="p1">  padding: 2rem;</p>
+<p class="p1">  border-radius: 4px;</p>
+<p class="p1">  border-left: 3px solid var(--terracotta);</p>
+<p class="p1">  transition: transform 0.2s, box-shadow 0.2s;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.niche-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(196, 98, 45, 0.15); }</p>
+<p class="p2"><br></p>
+<p class="p1">.niche-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }</p>
+<p class="p2"><br></p>
+<p class="p1">.niche-card h4 {</p>
+<p class="p1">  font-size: 1.1rem;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  margin-bottom: 0.5rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.niche-card p {</p>
+<p class="p1">  font-size: 0.85rem;</p>
+<p class="p1">  line-height: 1.7;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.how-it-works { background: var(--ocean); }</p>
+<p class="p2"><br></p>
+<p class="p1">.steps {</p>
+<p class="p1">  display: grid;</p>
+<p class="p1">  grid-template-columns: repeat(4, 1fr);</p>
+<p class="p1">  gap: 2rem;</p>
+<p class="p1">  margin-top: 3rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.step {</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">  padding: 1.5rem;</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.step:not(:last-child)::after {</p>
+<p class="p1">  content: '→';</p>
+<p class="p1">  position: absolute;</p>
+<p class="p1">  right: -1rem;</p>
+<p class="p1">  top: 2rem;</p>
+<p class="p1">  color: rgba(196, 98, 45, 0.4);</p>
+<p class="p1">  font-size: 1.2rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.step-num {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 3.5rem;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  opacity: 0.5;</p>
+<p class="p1">  line-height: 1;</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.step h4 {</p>
+<p class="p1">  font-size: 1rem;</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  margin-bottom: 0.8rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.step p {</p>
+<p class="p1">  font-size: 0.82rem;</p>
+<p class="p1">  line-height: 1.7;</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.6);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.kelsey-note {</p>
+<p class="p1">  background: var(--sand-mid);</p>
+<p class="p1">  padding: 4rem;</p>
+<p class="p1">  border-radius: 4px;</p>
+<p class="p1">  max-width: 700px;</p>
+<p class="p1">  margin: 3rem auto 0;</p>
+<p class="p1">  border-left: 4px solid var(--terracotta);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.kelsey-note blockquote {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 1.25rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  line-height: 1.7;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.kelsey-note cite {</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  letter-spacing: 0.1em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  font-style: normal;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── GROUP PAGE ── */</p>
+<p class="p1">.group-hero {</p>
+<p class="p1">  background: linear-gradient(135deg, #2A1A0E 0%, var(--terracotta-dark) 100%);</p>
+<p class="p1">  padding: 6rem 4rem 5rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.group-hero h1 {</p>
+<p class="p1">  font-size: clamp(2rem, 4.5vw, 3.8rem);</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  line-height: 1.15;</p>
+<p class="p1">  max-width: 800px;</p>
+<p class="p1">  margin: 0 auto 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.group-hero p {</p>
+<p class="p1">  font-size: 1.05rem;</p>
+<p class="p1">  color: rgba(232, 213, 183, 0.8);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  max-width: 560px;</p>
+<p class="p1">  margin: 0 auto 2.5rem;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── CONTACT PAGE ── */</p>
+<p class="p1">.contact-hero {</p>
+<p class="p1">  background: var(--ocean);</p>
+<p class="p1">  padding: 5rem 4rem 4rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-hero h1 {</p>
+<p class="p1">  font-size: clamp(2rem, 4vw, 3.5rem);</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-hero p {</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.7);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  max-width: 560px;</p>
+<p class="p1">  margin: 0 auto;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-body { background: var(--warm-white); }</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-grid {</p>
+<p class="p1">  max-width: 1000px;</p>
+<p class="p1">  margin: 0 auto;</p>
+<p class="p1">  display: grid;</p>
+<p class="p1">  grid-template-columns: 1.2fr 1fr;</p>
+<p class="p1">  gap: 5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-toggle {</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  gap: 0;</p>
+<p class="p1">  margin-bottom: 2.5rem;</p>
+<p class="p1">  border: 1px solid var(--sand);</p>
+<p class="p1">  border-radius: 3px;</p>
+<p class="p1">  overflow: hidden;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.toggle-btn {</p>
+<p class="p1">  flex: 1;</p>
+<p class="p1">  padding: 0.8rem;</p>
+<p class="p1">  background: transparent;</p>
+<p class="p1">  border: none;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.72rem;</p>
+<p class="p1">  letter-spacing: 0.1em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--text-light);</p>
+<p class="p1">  cursor: pointer;</p>
+<p class="p1">  transition: all 0.2s;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.toggle-btn.active {</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">  color: var(--warm-white);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group {</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group label {</p>
+<p class="p1">  display: block;</p>
+<p class="p1">  font-size: 0.7rem;</p>
+<p class="p1">  letter-spacing: 0.12em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--text-light);</p>
+<p class="p1">  margin-bottom: 0.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group input,</p>
+<p class="p1">.form-group select,</p>
+<p class="p1">.form-group textarea {</p>
+<p class="p1">  width: 100%;</p>
+<p class="p1">  padding: 0.9rem 1rem;</p>
+<p class="p1">  background: var(--sand-light);</p>
+<p class="p1">  border: 1px solid var(--sand);</p>
+<p class="p1">  border-radius: 3px;</p>
+<p class="p1">  font-family: 'Jost', sans-serif;</p>
+<p class="p1">  font-size: 0.9rem;</p>
+<p class="p1">  color: var(--text-dark);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  transition: border-color 0.2s;</p>
+<p class="p1">  outline: none;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group input:focus,</p>
+<p class="p1">.form-group select:focus,</p>
+<p class="p1">.form-group textarea:focus {</p>
+<p class="p1">  border-color: var(--terracotta);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.form-group textarea { resize: vertical; min-height: 120px; }</p>
+<p class="p2"><br></p>
+<p class="p1">.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-sidebar h3 {</p>
+<p class="p1">  font-size: 1.6rem;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.contact-sidebar p {</p>
+<p class="p1">  font-size: 0.9rem;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 2rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.calendly-block {</p>
+<p class="p1">  background: var(--ocean);</p>
+<p class="p1">  padding: 2.5rem;</p>
+<p class="p1">  border-radius: 4px;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.calendly-block h4 {</p>
+<p class="p1">  font-size: 1.3rem;</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  margin-bottom: 0.8rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.calendly-block p {</p>
+<p class="p1">  font-size: 0.85rem;</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.65);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">  line-height: 1.7;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.reassurance {</p>
+<p class="p1">  background: var(--sand-mid);</p>
+<p class="p1">  padding: 4rem;</p>
+<p class="p1">  border-radius: 4px;</p>
+<p class="p1">  max-width: 1000px;</p>
+<p class="p1">  margin: 3rem auto 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.reassurance h3 {</p>
+<p class="p1">  font-size: 1.5rem;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.reassurance p {</p>
+<p class="p1">  font-size: 0.9rem;</p>
+<p class="p1">  line-height: 1.9;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── BLOG PAGE ── */</p>
+<p class="p1">.blog-hero {</p>
+<p class="p1">  background: var(--sand-mid);</p>
+<p class="p1">  padding: 5rem 4rem 4rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.blog-hero h1 {</p>
+<p class="p1">  font-size: clamp(2rem, 4vw, 3.5rem);</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  margin-bottom: 0.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.blog-article { background: var(--warm-white); }</p>
+<p class="p2"><br></p>
+<p class="p1">.article-inner {</p>
+<p class="p1">  max-width: 720px;</p>
+<p class="p1">  margin: 0 auto;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.article-meta {</p>
+<p class="p1">  font-size: 0.7rem;</p>
+<p class="p1">  letter-spacing: 0.14em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  margin-bottom: 2rem;</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  gap: 1.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.article-inner h1 {</p>
+<p class="p1">  font-size: clamp(1.8rem, 3.5vw, 2.8rem);</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  line-height: 1.2;</p>
+<p class="p1">  margin-bottom: 0.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.article-subtitle {</p>
+<p class="p1">  font-size: 1rem;</p>
+<p class="p1">  color: var(--text-light);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 3rem;</p>
+<p class="p1">  padding-bottom: 2rem;</p>
+<p class="p1">  border-bottom: 1px solid var(--sand);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.article-inner h2 {</p>
+<p class="p1">  font-size: 1.6rem;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  margin: 3rem 0 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.article-inner p {</p>
+<p class="p1">  font-size: 1rem;</p>
+<p class="p1">  line-height: 1.95;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 1.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.article-inner em {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 1.1em;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.article-sign {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 1.1rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  color: var(--terracotta);</p>
+<p class="p1">  margin-top: 3rem;</p>
+<p class="p1">  padding-top: 2rem;</p>
+<p class="p1">  border-top: 1px solid var(--sand);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── FOOTER ── */</p>
+<p class="p1">footer {</p>
+<p class="p1">  background: var(--text-dark);</p>
+<p class="p1">  padding: 4rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.footer-logo {</p>
+<p class="p1">  font-family: 'Cormorant Garamond', serif;</p>
+<p class="p1">  font-size: 1.5rem;</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  margin-bottom: 0.3rem;</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.footer-tagline {</p>
+<p class="p1">  font-size: 0.68rem;</p>
+<p class="p1">  letter-spacing: 0.18em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--text-light);</p>
+<p class="p1">  margin-bottom: 2rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.footer-links {</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  gap: 2rem;</p>
+<p class="p1">  justify-content: center;</p>
+<p class="p1">  list-style: none;</p>
+<p class="p1">  margin-bottom: 2.5rem;</p>
+<p class="p1">  flex-wrap: wrap;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.footer-links a {</p>
+<p class="p1">  font-size: 0.72rem;</p>
+<p class="p1">  letter-spacing: 0.12em;</p>
+<p class="p1">  text-transform: uppercase;</p>
+<p class="p1">  color: var(--text-light);</p>
+<p class="p1">  text-decoration: none;</p>
+<p class="p1">  transition: color 0.2s;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.footer-links a:hover { color: var(--terracotta); }</p>
+<p class="p2"><br></p>
+<p class="p1">.footer-copy {</p>
+<p class="p1">  font-size: 0.75rem;</p>
+<p class="p1">  color: rgba(139, 105, 84, 0.5);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── DESTINATIONS PAGE ── */</p>
+<p class="p1">.dest-hero {</p>
+<p class="p1">  background: linear-gradient(160deg, var(--ocean) 0%, #0D1F2D 100%);</p>
+<p class="p1">  padding: 6rem 4rem 5rem;</p>
+<p class="p1">  text-align: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dest-hero h1 {</p>
+<p class="p1">  font-size: clamp(2.2rem, 5vw, 4rem);</p>
+<p class="p1">  color: var(--sand);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  margin-bottom: 1rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.dest-hero p {</p>
+<p class="p1">  color: rgba(250, 247, 242, 0.7);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  max-width: 560px;</p>
+<p class="p1">  margin: 0 auto;</p>
+<p class="p1">  line-height: 1.8;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.map-placeholder {</p>
+<p class="p1">  background: var(--warm-white);</p>
+<p class="p1">  padding: 6rem 4rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.map-intro { max-width: 720px; margin: 0 auto; text-align: center; margin-bottom: 3rem; }</p>
+<p class="p2"><br></p>
+<p class="p1">.map-intro p {</p>
+<p class="p1">  font-size: 0.95rem;</p>
+<p class="p1">  line-height: 1.9;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">  margin-bottom: 2rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.color-key {</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  flex-wrap: wrap;</p>
+<p class="p1">  gap: 1.5rem;</p>
+<p class="p1">  justify-content: center;</p>
+<p class="p1">  margin-bottom: 3rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.key-item {</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">  gap: 0.5rem;</p>
+<p class="p1">  font-size: 0.78rem;</p>
+<p class="p1">  color: var(--text-mid);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.key-dot {</p>
+<p class="p1">  width: 12px; height: 12px;</p>
+<p class="p1">  border-radius: 50%;</p>
+<p class="p1">  flex-shrink: 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.map-frame {</p>
+<p class="p1">  background: var(--sand-mid);</p>
+<p class="p1">  border-radius: 8px;</p>
+<p class="p1">  height: 450px;</p>
+<p class="p1">  display: flex;</p>
+<p class="p1">  align-items: center;</p>
+<p class="p1">  justify-content: center;</p>
+<p class="p1">  border: 1px dashed var(--sand);</p>
+<p class="p1">  position: relative;</p>
+<p class="p1">  overflow: hidden;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.map-frame-content { text-align: center; z-index: 2; }</p>
+<p class="p2"><br></p>
+<p class="p1">.map-frame-content h3 {</p>
+<p class="p1">  font-size: 1.5rem;</p>
+<p class="p1">  color: var(--ocean);</p>
+<p class="p1">  font-style: italic;</p>
+<p class="p1">  margin-bottom: 0.5rem;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.map-frame-content p {</p>
+<p class="p1">  font-size: 0.85rem;</p>
+<p class="p1">  color: var(--text-light);</p>
+<p class="p1">  font-weight: 300;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── UTILITIES ── */</p>
+<p class="p1">.text-center { text-align: center; }</p>
+<p class="p1">.mt-2 { margin-top: 2rem; }</p>
+<p class="p1">.mt-3 { margin-top: 3rem; }</p>
+<p class="p2"><br></p>
+<p class="p1">.divider-line {</p>
+<p class="p1">  width: 3rem;</p>
+<p class="p1">  height: 1px;</p>
+<p class="p1">  background: var(--terracotta);</p>
+<p class="p1">  margin: 2rem 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.divider-line.centered { margin-left: auto; margin-right: auto; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── RESPONSIVE ── */</p>
+<p class="p1">@media (max-width: 900px) {</p>
+<p class="p1">  nav { padding: 1rem 1.5rem; }</p>
+<p class="p1">  .nav-links { display: none; }</p>
+<p class="p1">  section { padding: 4rem 1.5rem; }</p>
+<p class="p1">  .hero-content { padding: 3rem 1.5rem; }</p>
+<p class="p1">  .who-inner, .founder-inner, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }</p>
+<p class="p1">  .paths-grid, .why-grid, .niches-grid, .steps { grid-template-columns: 1fr; }</p>
+<p class="p1">  .step:not(:last-child)::after { display: none; }</p>
+<p class="p1">  .form-row { grid-template-columns: 1fr; }</p>
+<p class="p1">  .dune-illustration { height: 250px; }</p>
+<p class="p1">  footer { padding: 3rem 1.5rem; }</p>
+<p class="p1">  .contact-body .section-inner { padding: 0; }</p>
+<p class="p1">}</p>
+<p class="p1">```</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══ NAV ══ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;nav id="mainNav"&gt;</p>
+<p class="p1">  &lt;a href="#" class="nav-logo" onclick="showPage('home')"&gt;</p>
+<p class="p1">    Likeminded Group Travel</p>
+<p class="p1">    &lt;span&gt;Change the way you see everything&lt;/span&gt;</p>
+<p class="p1">  &lt;/a&gt;</p>
+<p class="p1">  &lt;ul class="nav-links"&gt;</p>
+<p class="p1">    &lt;li&gt;&lt;a href="#" onclick="showPage('solo')"&gt;Solo Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;li&gt;&lt;a href="#" onclick="showPage('group')"&gt;Group Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;li&gt;&lt;a href="#" onclick="showPage('destinations')"&gt;Destinations&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;li&gt;&lt;a href="#" onclick="showPage('about')"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;li&gt;&lt;a href="#" onclick="showPage('blog')"&gt;Journal&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;li&gt;&lt;a href="#" onclick="showPage('contact')" class="nav-cta"&gt;Start Planning&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">  &lt;/ul&gt;</p>
+<p class="p1">&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══════════════════════════════════════</p>
+<p class="p1">     HOME PAGE</p>
+<p class="p1">══════════════════════════════════════ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="page-home" class="page active"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;!-- Hero --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="hero"&gt;</p>
+<p class="p1">    &lt;div class="hero-bg"&gt;&lt;/div&gt;</p>
+<p class="p1">    &lt;svg class="hero-dune" viewBox="0 0 1440 400" preserveAspectRatio="none" fill="none"&gt;</p>
+<p class="p1">      &lt;path d="M0 400 Q360 100 720 250 Q1080 380 1440 150 L1440 400Z" fill="#E8D5B7"/&gt;</p>
+<p class="p1">      &lt;path d="M0 400 Q400 200 800 300 Q1100 370 1440 220 L1440 400Z" fill="#C4622D" opacity="0.4"/&gt;</p>
+<p class="p1">    &lt;/svg&gt;</p>
+<p class="p1">    &lt;div class="hero-content"&gt;</p>
+<p class="p1">      &lt;div class="hero-eyebrow"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">      &lt;h1&gt;Change the way&lt;br/&gt;you see &lt;em&gt;everything.&lt;/em&gt;&lt;/h1&gt;</p>
+<p class="p1">      &lt;p class="hero-sub"&gt;We connect curious, open-hearted travelers with extraordinary experiences and the people who make them unforgettable. Whether you're venturing out solo or bringing your favorite people along — we'll take care of everything.&lt;/p&gt;</p>
+<p class="p1">      &lt;div class="hero-buttons"&gt;</p>
+<p class="p1">        &lt;a href="#" class="btn-primary" onclick="showPage('solo')"&gt;Find My Solo Adventure&lt;/a&gt;</p>
+<p class="p1">        &lt;a href="#" class="btn-outline" onclick="showPage('group')"&gt;Plan My Group Trip&lt;/a&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;!-- Who We Are --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="who-we-are"&gt;</p>
+<p class="p1">    &lt;div class="who-inner"&gt;</p>
+<p class="p1">      &lt;div&gt;</p>
+<p class="p1">        &lt;div class="section-eyebrow"&gt;Our Philosophy&lt;/div&gt;</p>
+<p class="p1">        &lt;h2 class="section-title"&gt;Travel isn't just where you go. It's who you become.&lt;/h2&gt;</p>
+<p class="p1">        &lt;div class="divider-line"&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;p class="section-body"&gt;We believe the best journeys do two things at once — they show you the world and they show you yourself. At Likeminded Group Travel, we curate experiences that go beyond sightseeing. We connect you with trips and people that expand your perspective, deepen your relationships, and remind you what it feels like to be truly alive.&lt;/p&gt;</p>
+<p class="p1">        &lt;br/&gt;</p>
+<p class="p1">        &lt;p class="section-body"&gt;We're not a big box travel agency. We're your personal travel advisor — passionate, experienced, and genuinely invested in creating the trip of your life.&lt;/p&gt;</p>
+<p class="p1">        &lt;br/&gt;</p>
+<p class="p1">        &lt;a href="#" class="btn-terracotta-outline" onclick="showPage('about')" style="margin-top:1rem"&gt;Our Story&lt;/a&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">      &lt;div class="dune-illustration"&gt;</p>
+<p class="p1">        &lt;div class="dune-circle"&gt;&lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;!-- Two Paths --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="two-paths"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="text-center"&gt;</p>
+<p class="p1">        &lt;div class="section-eyebrow" style="justify-content:center"&gt;How Would You Like to Travel?&lt;/div&gt;</p>
+<p class="p1">        &lt;h2 class="section-title"&gt;Two ways to explore the world.&lt;/h2&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">      &lt;div class="paths-grid"&gt;</p>
+<p class="p1">        &lt;div class="path-card" onclick="showPage('solo')"&gt;</p>
+<p class="p1">          &lt;div class="path-icon"&gt;🌍&lt;/div&gt;</p>
+<p class="p1">          &lt;h3&gt;Discover the world.&lt;br/&gt;Rediscover yourself.&lt;/h3&gt;</p>
+<p class="p1">          &lt;p&gt;Dreaming of an adventure but don't have someone to go with? We'll match you with incredible group trips built around shared interests — so you show up as a stranger and leave with a community.&lt;/p&gt;</p>
+<p class="p1">          &lt;a href="#" class="btn-outline" onclick="showPage('solo')"&gt;Find My Adventure&lt;/a&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="path-card" onclick="showPage('group')"&gt;</p>
+<p class="p1">          &lt;div class="path-icon"&gt;👯&lt;/div&gt;</p>
+<p class="p1">          &lt;h3&gt;Great adventures bring great people closer.&lt;/h3&gt;</p>
+<p class="p1">          &lt;p&gt;Whether it's a bachelorette trip, a birthday celebration, a wine club getaway, or a corporate retreat — we design custom journeys that bring your group together in ways a dinner party never could.&lt;/p&gt;</p>
+<p class="p1">          &lt;a href="#" class="btn-outline" onclick="showPage('group')"&gt;Plan My Group Trip&lt;/a&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;!-- Why Likeminded --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="why"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="section-eyebrow"&gt;Why Likeminded&lt;/div&gt;</p>
+<p class="p1">      &lt;h2 class="section-title"&gt;Why travelers choose us.&lt;/h2&gt;</p>
+<p class="p1">      &lt;div class="why-grid"&gt;</p>
+<p class="p1">        &lt;div class="why-item"&gt;</p>
+<p class="p1">          &lt;div class="why-num"&gt;01&lt;/div&gt;</p>
+<p class="p1">          &lt;div&gt;</p>
+<p class="p1">            &lt;h4&gt;Curated With Intention&lt;/h4&gt;</p>
+<p class="p1">            &lt;p&gt;Every trip we recommend is handpicked. We only work with operators we trust to deliver authentic, transformative experiences.&lt;/p&gt;</p>
+<p class="p1">          &lt;/div&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="why-item"&gt;</p>
+<p class="p1">          &lt;div class="why-num"&gt;02&lt;/div&gt;</p>
+<p class="p1">          &lt;div&gt;</p>
+<p class="p1">            &lt;h4&gt;You're Never Just a Booking&lt;/h4&gt;</p>
+<p class="p1">            &lt;p&gt;We take the time to understand who you are, what you're looking for, and what would make this trip truly meaningful for you.&lt;/p&gt;</p>
+<p class="p1">          &lt;/div&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="why-item"&gt;</p>
+<p class="p1">          &lt;div class="why-num"&gt;03&lt;/div&gt;</p>
+<p class="p1">          &lt;div&gt;</p>
+<p class="p1">            &lt;h4&gt;Stress-Free From Start to Finish&lt;/h4&gt;</p>
+<p class="p1">            &lt;p&gt;From finding the perfect trip to booking every last detail — we handle the logistics so you can show up ready for adventure.&lt;/p&gt;</p>
+<p class="p1">          &lt;/div&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="why-item"&gt;</p>
+<p class="p1">          &lt;div class="why-num"&gt;04&lt;/div&gt;</p>
+<p class="p1">          &lt;div&gt;</p>
+<p class="p1">            &lt;h4&gt;A Community of Curious Travelers&lt;/h4&gt;</p>
+<p class="p1">            &lt;p&gt;When you travel with Likeminded, you join a community of open-hearted, curious people who see the world the same way you do.&lt;/p&gt;</p>
+<p class="p1">          &lt;/div&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;!-- Founder Preview --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="founder-preview"&gt;</p>
+<p class="p1">    &lt;div class="founder-inner"&gt;</p>
+<p class="p1">      &lt;div class="founder-visual"&gt;</p>
+<p class="p1">        &lt;div class="founder-block"&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="founder-block-2"&gt;&lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">      &lt;div&gt;</p>
+<p class="p1">        &lt;div class="founder-label"&gt;Meet Your Advisor&lt;/div&gt;</p>
+<p class="p1">        &lt;h2&gt;Hi, I'm Kelsey Fuller.&lt;/h2&gt;</p>
+<p class="p1">        &lt;p&gt;I've spent my career in hospitality — from hotel management to short-term rentals — and one thing has always been true: the best experiences happen when the right people come together in the right place.&lt;/p&gt;</p>
+<p class="p1">        &lt;p&gt;Likeminded Group Travel was born from my deep love of travel, my belief in the power of human connection, and my passion for helping people find experiences that genuinely change them.&lt;/p&gt;</p>
+<p class="p1">        &lt;a href="#" class="btn-outline" onclick="showPage('about')"&gt;Learn More About Me&lt;/a&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;!-- CTA Banner --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="cta-banner"&gt;</p>
+<p class="p1">    &lt;h2&gt;Ready to change the way you see everything?&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;Whether you're a solo traveler ready to find your people or a group looking for your next great adventure — let's start planning something extraordinary together.&lt;/p&gt;</p>
+<p class="p1">    &lt;div class="cta-buttons"&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white" onclick="showPage('solo')"&gt;Find My Solo Adventure&lt;/a&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white-outline" onclick="showPage('group')"&gt;Plan My Group Trip&lt;/a&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    &lt;div class="footer-logo"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="footer-tagline"&gt;Change the way you see everything&lt;/div&gt;</p>
+<p class="p1">    &lt;ul class="footer-links"&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('solo')"&gt;Solo Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('group')"&gt;Group Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('destinations')"&gt;Destinations&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('about')"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('blog')"&gt;Journal&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('contact')"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;/ul&gt;</p>
+<p class="p1">    &lt;div class="footer-copy"&gt;© 2025 Likeminded Group Travel · All rights reserved&lt;/div&gt;</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══════════════════════════════════════</p>
+<p class="p1">     ABOUT PAGE</p>
+<p class="p1">══════════════════════════════════════ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="page-about" class="page"&gt;</p>
+<p class="p1">  &lt;section class="about-hero"&gt;</p>
+<p class="p1">    &lt;div class="subtitle"&gt;About Kelsey Fuller&lt;/div&gt;</p>
+<p class="p1">    &lt;h1&gt;Hi, I'm Kelsey Fuller — and I believe travel helps you live life to the fullest.&lt;/h1&gt;</p>
+<p class="p1">    &lt;p style="color:rgba(250,247,242,0.6);font-weight:300;margin-top:0.5rem;font-size:0.85rem;font-style:italic"&gt;(yes, the pun is intended — and yes, I fully own it)&lt;/p&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="about-story"&gt;</p>
+<p class="p1">    &lt;div class="story-block"&gt;</p>
+<p class="p1">      &lt;h2&gt;My Story&lt;/h2&gt;</p>
+<p class="p1">      &lt;p&gt;My love affair with travel started after college, when I packed my bags and moved to Chile with nothing but curiosity and a willingness to figure it out as I went. I spent months working in hostels and bed and breakfasts across the country — and somewhere along the way, something shifted.&lt;/p&gt;</p>
+<p class="p1">      &lt;p&gt;I met people from every corner of the world, heard stories that expanded my understanding of what life could look like, and felt my eyes open to possibilities I hadn't even known existed. I came home a different person. And I've been chasing that feeling ever since.&lt;/p&gt;</p>
+<p class="p1">      &lt;p&gt;That experience also planted a seed professionally. I spent the next decade building a career in hospitality — specifically in hotels — because I loved making people feel welcome. I loved the human connection. I loved being part of someone's experience of somewhere new. For ten years, that was enough.&lt;/p&gt;</p>
+<p class="p1">      &lt;p&gt;Then the company I was working for went bankrupt. And as disorienting as that was, it turned out to be one of the best things that ever happened to me — because it forced me to ask a question I'd been too busy to ask:&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">```</p>
+<p class="p1">  &lt;div class="pull-quote"&gt;"What do I actually love most about this work?"&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;p&gt;The answer was clear. It was never the buildings or the brands. It was the people.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="story-divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;h2&gt;The Trips That Changed Me&lt;/h2&gt;</p>
+<p class="p1">  &lt;p&gt;I've taken a lot of trips in my life. But a few have genuinely changed me.&lt;/p&gt;</p>
+<p class="p1">  &lt;p&gt;The first was Chile — that post-college leap into the unknown that taught me what I was made of and showed me how wide the world really is.&lt;/p&gt;</p>
+<p class="p1">  &lt;p&gt;The second was Morocco. I went as a solo traveler on a group trip hosted by a travel influencer I'd followed for years. It was shortly after a significant chapter of my life had closed, and I needed something to crack me back open. Morocco delivered. The people I met, the places we explored, the conversations we had — it was soul-nourishing in the truest sense. That trip showed me firsthand what it feels like to show up somewhere alone and leave feeling like you belong somewhere new.&lt;/p&gt;</p>
+<p class="p1">  &lt;p&gt;The third was Australia. I'd always dreamed of diving the Great Barrier Reef, so I booked a week-long liveaboard and made it happen. Afterward I traveled through Queensland before landing in Melbourne — a city that felt, inexplicably and immediately, like home. I made incredible connections there and fell completely in love with the place. Australia holds a very special piece of my heart, and I'll be back.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="story-divider"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;h2&gt;Why Likeminded&lt;/h2&gt;</p>
+<p class="p1">  &lt;p&gt;Today, alongside Likeminded Group Travel, I'm also an Airbnb host — and hosting has taught me something that years in hotel management never quite could. When you're able to create a truly personal experience for someone, when you know their name and their story and what would make their stay feel special — that's when hospitality becomes something magical.&lt;/p&gt;</p>
+<p class="p1">  &lt;p&gt;I started Likeminded Group Travel because I believe something deeply: we are all so much more alike than we are different. We just need the right conditions to find that common ground. Travel creates those conditions. It strips away the noise of everyday life, puts us somewhere unfamiliar, and suddenly we're open — to new experiences, new ideas, new people, and new parts of ourselves.&lt;/p&gt;</p>
+<p class="p1">  &lt;p&gt;My job is to help you find those experiences. To connect you with trips and people that expand your world. And to take care of every detail in between so you can show up fully present and ready for whatever the journey brings.&lt;/p&gt;</p>
+<p class="p1">  &lt;p&gt;Because life is meant to be lived fully. And I'd love to help you do exactly that.&lt;/p&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">```</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="cta-banner"&gt;</p>
+<p class="p1">    &lt;h2&gt;Ready to find your next adventure?&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;Whether you're a solo traveler looking for your people or a group ready to create something unforgettable — I'd love to help you make it happen.&lt;/p&gt;</p>
+<p class="p1">    &lt;div class="cta-buttons"&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white" onclick="showPage('solo')"&gt;Find My Solo Adventure&lt;/a&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white-outline" onclick="showPage('group')"&gt;Plan My Group Trip&lt;/a&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    &lt;div class="footer-logo"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="footer-tagline"&gt;Change the way you see everything&lt;/div&gt;</p>
+<p class="p1">    &lt;ul class="footer-links"&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('home')"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('solo')"&gt;Solo Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('group')"&gt;Group Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('contact')"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;/ul&gt;</p>
+<p class="p1">    &lt;div class="footer-copy"&gt;© 2025 Likeminded Group Travel · All rights reserved&lt;/div&gt;</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══════════════════════════════════════</p>
+<p class="p1">     SOLO TRAVEL PAGE</p>
+<p class="p1">══════════════════════════════════════ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="page-solo" class="page"&gt;</p>
+<p class="p1">  &lt;section class="solo-hero"&gt;</p>
+<p class="p1">    &lt;div class="section-eyebrow" style="justify-content:center;color:rgba(196,98,45,0.8)"&gt;For the Solo Traveler&lt;/div&gt;</p>
+<p class="p1">    &lt;h1&gt;Discover the world.&lt;br/&gt;Rediscover yourself.&lt;/h1&gt;</p>
+<p class="p1">    &lt;p&gt;You don't need a travel partner to have the adventure of a lifetime. You just need the right trip — and the right people to share it with.&lt;/p&gt;</p>
+<p class="p1">    &lt;a href="#" class="btn-primary" onclick="showPage('contact')"&gt;Find My Adventure&lt;/a&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section style="background:var(--warm-white)"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div style="max-width:700px;margin:0 auto"&gt;</p>
+<p class="p1">        &lt;div class="section-eyebrow"&gt;You've Been Waiting For This&lt;/div&gt;</p>
+<p class="p1">        &lt;h2 class="section-title"&gt;The magic of likeminded travel.&lt;/h2&gt;</p>
+<p class="p1">        &lt;p class="section-body"&gt;There's something extraordinary that happens when you put a group of people together who share a common passion, curiosity, or life experience. The small talk disappears. The walls come down. Real conversations happen — the kind you don't usually get to have with people you've known for years.&lt;/p&gt;</p>
+<p class="p1">        &lt;br/&gt;</p>
+<p class="p1">        &lt;p class="section-body"&gt;Instead of joining a generic group tour where you're surrounded by strangers with nothing in common, we connect you with expertly led group trips built around a shared thread — a passion, an interest, a chapter of life. You arrive already having something in common with every single person there.&lt;/p&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section style="background:var(--sand-mid)"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="section-eyebrow"&gt;Find Your People&lt;/div&gt;</p>
+<p class="p1">      &lt;h2 class="section-title"&gt;Whatever lights you up,&lt;br/&gt;there's a group waiting for you.&lt;/h2&gt;</p>
+<p class="p1">      &lt;div class="niches-grid"&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🌊&lt;/div&gt;&lt;h4&gt;Adventure &amp; Outdoor&lt;/h4&gt;&lt;p&gt;Hiking, diving, surfing, trekking — for people who feel most alive in nature.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🍷&lt;/div&gt;&lt;h4&gt;Food &amp; Wine&lt;/h4&gt;&lt;p&gt;Culinary tours, wine regions, farm-to-table — for people whose idea of culture is best tasted.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🧘&lt;/div&gt;&lt;h4&gt;Wellness &amp; Mindfulness&lt;/h4&gt;&lt;p&gt;Yoga retreats, meditation journeys, slow travel — for people looking to rest and reset.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🌱&lt;/div&gt;&lt;h4&gt;Travelers in Transition&lt;/h4&gt;&lt;p&gt;Newly single, newly retired, new chapter — for people who know travel is exactly what they need.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🌍&lt;/div&gt;&lt;h4&gt;Cultural Immersion&lt;/h4&gt;&lt;p&gt;Deep dives into history, art, and local life — for people who want to truly understand the places they visit.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🏳️‍🌈&lt;/div&gt;&lt;h4&gt;LGBTQ+ Travelers&lt;/h4&gt;&lt;p&gt;Safe, welcoming, celebratory spaces for travelers who want to explore the world in community.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="how-it-works"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="text-center"&gt;</p>
+<p class="p1">        &lt;div class="section-eyebrow" style="justify-content:center;color:var(--terracotta-light)"&gt;How It Works&lt;/div&gt;</p>
+<p class="p1">        &lt;h2 class="section-title" style="color:var(--sand)"&gt;Simple. Personal. Stress-free.&lt;/h2&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">      &lt;div class="steps"&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;01&lt;/div&gt;&lt;h4&gt;Tell Me About You&lt;/h4&gt;&lt;p&gt;We start with a conversation about who you are, where you're dreaming of going, and what kind of experience feels meaningful right now.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;02&lt;/div&gt;&lt;h4&gt;I Find Your Match&lt;/h4&gt;&lt;p&gt;Using my network of trusted operators, I curate trips that align with your interests, travel style, and budget.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;03&lt;/div&gt;&lt;h4&gt;We Handle Everything&lt;/h4&gt;&lt;p&gt;Once you've found the one, I take care of all the booking details — flights, transfers, accommodations, and more.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;04&lt;/div&gt;&lt;h4&gt;You Show Up &amp; Soak It In&lt;/h4&gt;&lt;p&gt;All you have to do is arrive. Go find your people, see something incredible, and come back changed.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section style="background:var(--warm-white)"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="kelsey-note"&gt;</p>
+<p class="p1">        &lt;blockquote&gt;"I took my first solo group trip to Morocco during one of the most significant transitions of my life. I didn't know a single person on that trip. What I found there — the connections, the conversations, the sense of belonging — was exactly what my soul needed. I came home with a renewed sense of self and friendships I still cherish today."&lt;/blockquote&gt;</p>
+<p class="p1">        &lt;cite&gt;— Kelsey Fuller, Founder of Likeminded Group Travel&lt;/cite&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="cta-banner"&gt;</p>
+<p class="p1">    &lt;h2&gt;Your people are out there. Let's find them.&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;Tell me a little about yourself and the kind of experience you're dreaming of — and I'll take it from there.&lt;/p&gt;</p>
+<p class="p1">    &lt;div class="cta-buttons"&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white" onclick="showPage('contact')"&gt;Start My Adventure&lt;/a&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    &lt;div class="footer-logo"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="footer-tagline"&gt;Change the way you see everything&lt;/div&gt;</p>
+<p class="p1">    &lt;ul class="footer-links"&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('home')"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('group')"&gt;Group Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('about')"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('contact')"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;/ul&gt;</p>
+<p class="p1">    &lt;div class="footer-copy"&gt;© 2025 Likeminded Group Travel · All rights reserved&lt;/div&gt;</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══════════════════════════════════════</p>
+<p class="p1">     GROUP TRAVEL PAGE</p>
+<p class="p1">══════════════════════════════════════ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="page-group" class="page"&gt;</p>
+<p class="p1">  &lt;section class="group-hero"&gt;</p>
+<p class="p1">    &lt;div class="section-eyebrow" style="justify-content:center;color:rgba(232,213,183,0.7)"&gt;For Groups&lt;/div&gt;</p>
+<p class="p1">    &lt;h1&gt;Great adventures bring great people closer — let's create yours.&lt;/h1&gt;</p>
+<p class="p1">    &lt;p&gt;You already have your people. Now let's take them somewhere unforgettable. We design custom group journeys for every kind of crew.&lt;/p&gt;</p>
+<p class="p1">    &lt;a href="#" class="btn-white" onclick="showPage('contact')"&gt;Plan My Group Trip&lt;/a&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section style="background:var(--warm-white)"&gt;</p>
+<p class="p1">    &lt;div class="section-inner" style="max-width:720px"&gt;</p>
+<p class="p1">      &lt;div class="section-eyebrow"&gt;Because Some Experiences Are Better Shared&lt;/div&gt;</p>
+<p class="p1">      &lt;h2 class="section-title"&gt;There's something about traveling together.&lt;/h2&gt;</p>
+<p class="p1">      &lt;p class="section-body"&gt;It strips away the everyday routine, puts you somewhere new and exciting, and creates the kind of shared memories that bond people for life. Whether you're celebrating a milestone, nurturing a passion, or simply long overdue for an adventure together — a well-crafted group trip is one of the most meaningful gifts you can give the people you love.&lt;/p&gt;</p>
+<p class="p1">      &lt;br/&gt;</p>
+<p class="p1">      &lt;p class="section-body"&gt;And the best part? The person who organized the trip gets to actually enjoy it. That's exactly what we're here for.&lt;/p&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section style="background:var(--sand-mid)"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="section-eyebrow"&gt;Every Group Has a Story&lt;/div&gt;</p>
+<p class="p1">      &lt;h2 class="section-title"&gt;The groups we love working with.&lt;/h2&gt;</p>
+<p class="p1">      &lt;div class="niches-grid"&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🥂&lt;/div&gt;&lt;h4&gt;Bachelorette &amp; Bachelor&lt;/h4&gt;&lt;p&gt;Send them off in style — beach escape, European city adventure, or wine country weekend.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🎂&lt;/div&gt;&lt;h4&gt;Birthday &amp; Milestones&lt;/h4&gt;&lt;p&gt;Some birthdays deserve more than a party. They deserve an adventure.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🍷&lt;/div&gt;&lt;h4&gt;Wine Clubs &amp; Foodies&lt;/h4&gt;&lt;p&gt;Take the group that loves great food and wine to the source.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;👯&lt;/div&gt;&lt;h4&gt;Friend Groups &amp; Reunions&lt;/h4&gt;&lt;p&gt;Finally making that trip happen that you've been talking about for years.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;🌿&lt;/div&gt;&lt;h4&gt;Wellness &amp; Hobby Groups&lt;/h4&gt;&lt;p&gt;Book clubs, hiking groups, yoga communities — imagine your shared passion somewhere extraordinary.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="niche-card"&gt;&lt;div class="niche-icon"&gt;💼&lt;/div&gt;&lt;h4&gt;Corporate &amp; Professional&lt;/h4&gt;&lt;p&gt;Teams and professional groups who want to connect meaningfully outside the conference room.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">      &lt;p style="text-align:center;margin-top:2rem;font-size:0.85rem;color:var(--text-light);font-weight:300"&gt;We work with groups of 4 or more. ✨ Any group. Any vibe. Any destination.&lt;/p&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="how-it-works"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="text-center"&gt;</p>
+<p class="p1">        &lt;div class="section-eyebrow" style="justify-content:center;color:var(--terracotta-light)"&gt;How It Works&lt;/div&gt;</p>
+<p class="p1">        &lt;h2 class="section-title" style="color:var(--sand)"&gt;Five steps to unforgettable.&lt;/h2&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">      &lt;div class="steps" style="grid-template-columns:repeat(5,1fr)"&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;01&lt;/div&gt;&lt;h4&gt;Tell Us About Your Group&lt;/h4&gt;&lt;p&gt;Who you are, what you love, where you're dreaming of going.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;02&lt;/div&gt;&lt;h4&gt;We Design Your Trip&lt;/h4&gt;&lt;p&gt;A custom itinerary built around your group's interests and budget.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;03&lt;/div&gt;&lt;h4&gt;Review &amp; Refine&lt;/h4&gt;&lt;p&gt;We present your concept and tweak every detail until it feels exactly right.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;04&lt;/div&gt;&lt;h4&gt;We Handle Everything&lt;/h4&gt;&lt;p&gt;Booking, logistics, pre-trip communication — all taken care of.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="step"&gt;&lt;div class="step-num"&gt;05&lt;/div&gt;&lt;h4&gt;Make Memories&lt;/h4&gt;&lt;p&gt;Show up and enjoy every single moment together.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="cta-banner"&gt;</p>
+<p class="p1">    &lt;h2&gt;Your group deserves an adventure worth talking about for years.&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;Tell us about your people and your dream trip — and we'll take it from there.&lt;/p&gt;</p>
+<p class="p1">    &lt;div class="cta-buttons"&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white" onclick="showPage('contact')"&gt;Start Planning Our Trip&lt;/a&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    &lt;div class="footer-logo"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="footer-tagline"&gt;Change the way you see everything&lt;/div&gt;</p>
+<p class="p1">    &lt;ul class="footer-links"&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('home')"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('solo')"&gt;Solo Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('about')"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('contact')"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;/ul&gt;</p>
+<p class="p1">    &lt;div class="footer-copy"&gt;© 2025 Likeminded Group Travel · All rights reserved&lt;/div&gt;</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══════════════════════════════════════</p>
+<p class="p1">     DESTINATIONS PAGE</p>
+<p class="p1">══════════════════════════════════════ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="page-destinations" class="page"&gt;</p>
+<p class="p1">  &lt;section class="dest-hero"&gt;</p>
+<p class="p1">    &lt;div class="section-eyebrow" style="justify-content:center;color:var(--terracotta-light)"&gt;Explore&lt;/div&gt;</p>
+<p class="p1">    &lt;h1&gt;The world is waiting.&lt;br/&gt;Where will you go?&lt;/h1&gt;</p>
+<p class="p1">    &lt;p&gt;We work with expert local partners across the globe to bring you experiences that are as unique as you are. Explore the map to discover where your next journey might take you.&lt;/p&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="map-placeholder"&gt;</p>
+<p class="p1">    &lt;div class="map-intro"&gt;</p>
+<p class="p1">      &lt;div class="section-eyebrow" style="justify-content:center"&gt;Explore Our World&lt;/div&gt;</p>
+<p class="p1">      &lt;h2 class="section-title"&gt;Our Partner Network&lt;/h2&gt;</p>
+<p class="p1">      &lt;p&gt;Every pin on this map represents a trusted local partner — a specialist in their destination and their craft, handpicked by Likeminded Group Travel for their expertise, authenticity, and commitment to creating truly meaningful experiences.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">```</p>
+<p class="p1">  &lt;div class="color-key"&gt;</p>
+<p class="p1">    &lt;div class="key-item"&gt;&lt;div class="key-dot" style="background:#C4622D"&gt;&lt;/div&gt;Adventure &amp; Outdoor&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="key-item"&gt;&lt;div class="key-dot" style="background:#8B4513"&gt;&lt;/div&gt;Food &amp; Wine&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="key-item"&gt;&lt;div class="key-dot" style="background:#5B7E8A"&gt;&lt;/div&gt;Wellness &amp; Mindfulness&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="key-item"&gt;&lt;div class="key-dot" style="background:#1B3A4B"&gt;&lt;/div&gt;Cultural Immersion&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="key-item"&gt;&lt;div class="key-dot" style="background:#7B9E4E"&gt;&lt;/div&gt;Group &amp; Celebration&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="key-item"&gt;&lt;div class="key-dot" style="background:#E8B86D"&gt;&lt;/div&gt;Solo Traveler Specialist&lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="map-frame"&gt;</p>
+<p class="p1">  &lt;div class="map-frame-content"&gt;</p>
+<p class="p1">    &lt;h3&gt;Interactive Map Coming Soon&lt;/h3&gt;</p>
+<p class="p1">    &lt;p&gt;Our partner network is growing — check back soon to explore our destinations.&lt;/p&gt;</p>
+<p class="p1">    &lt;br/&gt;</p>
+<p class="p1">    &lt;a href="#" class="btn-terracotta-outline" onclick="showPage('contact')"&gt;Ask About a Destination&lt;/a&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div style="text-align:center;margin-top:4rem"&gt;</p>
+<p class="p1">  &lt;div class="section-eyebrow" style="justify-content:center"&gt;Don't See What You're Looking For?&lt;/div&gt;</p>
+<p class="p1">  &lt;h2 class="section-title"&gt;We love a good challenge.&lt;/h2&gt;</p>
+<p class="p1">  &lt;p class="section-body" style="margin:0 auto;text-align:center"&gt;Our partner network is always growing. If you have a destination in mind that isn't on the map yet, chances are we can still make it happen. Reach out and tell us where you're dreaming of going.&lt;/p&gt;</p>
+<p class="p1">  &lt;br/&gt;&lt;br/&gt;</p>
+<p class="p1">  &lt;a href="#" class="btn-primary" onclick="showPage('contact')"&gt;Get In Touch&lt;/a&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">```</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    &lt;div class="footer-logo"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="footer-tagline"&gt;Change the way you see everything&lt;/div&gt;</p>
+<p class="p1">    &lt;ul class="footer-links"&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('home')"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('solo')"&gt;Solo Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('group')"&gt;Group Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('contact')"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;/ul&gt;</p>
+<p class="p1">    &lt;div class="footer-copy"&gt;© 2025 Likeminded Group Travel · All rights reserved&lt;/div&gt;</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══════════════════════════════════════</p>
+<p class="p1">     CONTACT PAGE</p>
+<p class="p1">══════════════════════════════════════ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="page-contact" class="page"&gt;</p>
+<p class="p1">  &lt;section class="contact-hero"&gt;</p>
+<p class="p1">    &lt;div class="section-eyebrow" style="justify-content:center;color:var(--terracotta-light)"&gt;Let's Talk&lt;/div&gt;</p>
+<p class="p1">    &lt;h1&gt;Let's start planning something extraordinary.&lt;/h1&gt;</p>
+<p class="p1">    &lt;p&gt;Whether you're a solo traveler ready to find your people or a group looking for your next great adventure — I'd love to hear from you.&lt;/p&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="contact-body"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--text-mid);max-width:600px;margin-bottom:3rem;line-height:1.8"&gt;"Every great trip starts with a conversation. Tell me a little about yourself and what you're looking for — and I'll get back to you within 48 hours." &lt;br/&gt;&lt;span style="font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--terracotta);font-style:normal"&gt;— Kelsey&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">```</p>
+<p class="p1">  &lt;div class="contact-grid"&gt;</p>
+<p class="p1">    &lt;div&gt;</p>
+<p class="p1">      &lt;h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--ocean);font-style:italic;margin-bottom:1.5rem"&gt;Tell Me About Your Dream Trip&lt;/h3&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">      &lt;div class="form-toggle"&gt;</p>
+<p class="p1">        &lt;button class="toggle-btn active" onclick="switchForm('solo')"&gt;🌍 I'm a Solo Traveler&lt;/button&gt;</p>
+<p class="p1">        &lt;button class="toggle-btn" onclick="switchForm('group')"&gt;👯 I'm Planning a Group Trip&lt;/button&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">      &lt;!-- Solo Form --&gt;</p>
+<p class="p1">      &lt;div id="form-solo"&gt;</p>
+<p class="p1">        &lt;div class="form-row"&gt;</p>
+<p class="p1">          &lt;div class="form-group"&gt;&lt;label&gt;First Name *&lt;/label&gt;&lt;input type="text" placeholder="Your first name"/&gt;&lt;/div&gt;</p>
+<p class="p1">          &lt;div class="form-group"&gt;&lt;label&gt;Last Name *&lt;/label&gt;&lt;input type="text" placeholder="Your last name"/&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Email Address *&lt;/label&gt;&lt;input type="email" placeholder="your@email.com"/&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Phone Number&lt;/label&gt;&lt;input type="tel" placeholder="Optional"/&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Where are you dreaming of going?&lt;/label&gt;&lt;input type="text" placeholder="It's okay if you don't know yet!"/&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;When are you hoping to travel?&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;Within 3 months&lt;/option&gt;&lt;option&gt;3–6 months&lt;/option&gt;&lt;option&gt;6–12 months&lt;/option&gt;&lt;option&gt;Just exploring for now&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;What kind of experience are you looking for?&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;Adventure &amp; Outdoor&lt;/option&gt;&lt;option&gt;Food &amp; Wine&lt;/option&gt;&lt;option&gt;Wellness &amp; Mindfulness&lt;/option&gt;&lt;option&gt;Cultural Immersion&lt;/option&gt;&lt;option&gt;Solo Traveler Specialist Trip&lt;/option&gt;&lt;option&gt;Not sure yet — help me figure it out!&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Tell me about yourself and this trip&lt;/label&gt;&lt;textarea placeholder="The more you share, the better I can help..."&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;How did you hear about us?&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;Instagram&lt;/option&gt;&lt;option&gt;Facebook&lt;/option&gt;&lt;option&gt;Google&lt;/option&gt;&lt;option&gt;Word of mouth&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;button class="btn-primary" style="width:100%;justify-content:center"&gt;Let's Do This →&lt;/button&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">      &lt;!-- Group Form --&gt;</p>
+<p class="p1">      &lt;div id="form-group-travel" style="display:none"&gt;</p>
+<p class="p1">        &lt;div class="form-row"&gt;</p>
+<p class="p1">          &lt;div class="form-group"&gt;&lt;label&gt;First Name *&lt;/label&gt;&lt;input type="text" placeholder="Your first name"/&gt;&lt;/div&gt;</p>
+<p class="p1">          &lt;div class="form-group"&gt;&lt;label&gt;Last Name *&lt;/label&gt;&lt;input type="text" placeholder="Your last name"/&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Email Address *&lt;/label&gt;&lt;input type="email" placeholder="your@email.com"/&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Tell us about your group&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;Bachelorette / Bachelor Party&lt;/option&gt;&lt;option&gt;Birthday or Milestone&lt;/option&gt;&lt;option&gt;Friend Group&lt;/option&gt;&lt;option&gt;Wine Club or Hobby Group&lt;/option&gt;&lt;option&gt;Professional / Networking Group&lt;/option&gt;&lt;option&gt;Corporate Retreat&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Group Size&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;4–6&lt;/option&gt;&lt;option&gt;7–10&lt;/option&gt;&lt;option&gt;11–20&lt;/option&gt;&lt;option&gt;20+&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Where are you dreaming of going?&lt;/label&gt;&lt;input type="text" placeholder="It's okay if you don't know yet!"/&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;When are you hoping to travel?&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;Within 3 months&lt;/option&gt;&lt;option&gt;3–6 months&lt;/option&gt;&lt;option&gt;6–12 months&lt;/option&gt;&lt;option&gt;Just exploring for now&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Approximate budget per person&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;Under $2,000&lt;/option&gt;&lt;option&gt;$2,000–$5,000&lt;/option&gt;&lt;option&gt;$5,000–$10,000&lt;/option&gt;&lt;option&gt;$10,000+&lt;/option&gt;&lt;option&gt;Not sure yet&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;Tell me about your group and your dream trip&lt;/label&gt;&lt;textarea placeholder="The more you share, the better I can help..."&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p1">        &lt;div class="form-group"&gt;&lt;label&gt;How did you hear about us?&lt;/label&gt;</p>
+<p class="p1">          &lt;select&gt;&lt;option&gt;Instagram&lt;/option&gt;&lt;option&gt;Facebook&lt;/option&gt;&lt;option&gt;Google&lt;/option&gt;&lt;option&gt;Word of mouth&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;&lt;/select&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;button class="btn-primary" style="width:100%;justify-content:center"&gt;Let's Start Planning →&lt;/button&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;div class="contact-sidebar"&gt;</p>
+<p class="p1">      &lt;div style="border-top:3px solid var(--terracotta);padding-top:2rem;margin-bottom:3rem"&gt;</p>
+<p class="p1">        &lt;h3&gt;— or —&lt;/h3&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">      &lt;div class="calendly-block"&gt;</p>
+<p class="p1">        &lt;h4&gt;Prefer to just jump on a call?&lt;/h4&gt;</p>
+<p class="p1">        &lt;p&gt;Book a free 30-minute discovery call and let's talk through your travel dreams together. No pressure, no obligation — just a great conversation about travel.&lt;/p&gt;</p>
+<p class="p1">        &lt;a href="#" class="btn-white"&gt;Book My Free Discovery Call&lt;/a&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">      &lt;div style="margin-top:3rem"&gt;</p>
+<p class="p1">        &lt;h3&gt;What happens next?&lt;/h3&gt;</p>
+<p class="p1">        &lt;p&gt;Within 48 hours of receiving your inquiry, I'll personally review your details and reach out to schedule a discovery call or send you an initial set of ideas tailored to your travel style and budget.&lt;/p&gt;</p>
+<p class="p1">        &lt;p&gt;There's no commitment required to start the conversation. Just curiosity and a sense of adventure.&lt;/p&gt;</p>
+<p class="p1">      &lt;/div&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="reassurance"&gt;</p>
+<p class="p1">    &lt;h3&gt;Not quite ready to reach out?&lt;/h3&gt;</p>
+<p class="p1">    &lt;p&gt;No problem at all. Follow along on Instagram for travel inspiration, destination spotlights, and a behind-the-scenes look at what Likeminded Group Travel is all about. When the time is right, we'll be here.&lt;/p&gt;</p>
+<p class="p1">    &lt;br/&gt;</p>
+<p class="p1">    &lt;a href="#" class="btn-terracotta-outline"&gt;Follow @LikemindedGroupTravel&lt;/a&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">```</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    &lt;div class="footer-logo"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="footer-tagline"&gt;Change the way you see everything&lt;/div&gt;</p>
+<p class="p1">    &lt;ul class="footer-links"&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('home')"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('solo')"&gt;Solo Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('group')"&gt;Group Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('about')"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;/ul&gt;</p>
+<p class="p1">    &lt;div class="footer-copy"&gt;© 2025 Likeminded Group Travel · All rights reserved&lt;/div&gt;</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- ══════════════════════════════════════</p>
+<p class="p1">     BLOG / JOURNAL PAGE</p>
+<p class="p1">══════════════════════════════════════ --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div id="page-blog" class="page"&gt;</p>
+<p class="p1">  &lt;section class="blog-hero"&gt;</p>
+<p class="p1">    &lt;div class="section-eyebrow" style="justify-content:center"&gt;The Journal&lt;/div&gt;</p>
+<p class="p1">    &lt;h1&gt;Stories from the road.&lt;/h1&gt;</p>
+<p class="p1">    &lt;p style="color:var(--text-light);font-weight:300;margin-top:0.5rem"&gt;Travel inspiration, destination guides, and honest reflections from Kelsey.&lt;/p&gt;</p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;section class="blog-article"&gt;</p>
+<p class="p1">    &lt;div class="section-inner"&gt;</p>
+<p class="p1">      &lt;div class="article-inner"&gt;</p>
+<p class="p1">        &lt;div class="article-meta"&gt;</p>
+<p class="p1">          &lt;span&gt;By Kelsey Fuller&lt;/span&gt;</p>
+<p class="p1">          &lt;span&gt;Founder's Note&lt;/span&gt;</p>
+<p class="p1">          &lt;span&gt;5 min read&lt;/span&gt;</p>
+<p class="p1">        &lt;/div&gt;</p>
+<p class="p1">        &lt;h1&gt;Why I Started Likeminded Group Travel — And Why Travel Has Always Been My North Star&lt;/h1&gt;</p>
+<p class="p1">        &lt;p class="article-subtitle"&gt;A note from Kelsey Fuller, Founder of Likeminded Group Travel&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">```</p>
+<p class="p1">    &lt;p&gt;There's a moment I keep coming back to.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;I'm standing on the deck of a liveaboard dive boat somewhere in the Coral Sea, the Great Barrier Reef stretching out beneath me in every direction. The water is impossibly blue. The world is completely quiet except for the sound of waves. And I remember thinking — &lt;em&gt;this is it. This is what life is supposed to feel like.&lt;/em&gt;&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;I'd booked that trip alone. Flown to Australia alone. Showed up to that boat knowing nobody. And somewhere between the first dive and the last sunset, I felt more like myself than I had in years.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;That trip didn't just check a bucket list item. It cracked something open in me. And it's a big part of why Likeminded Group Travel exists today.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;h2&gt;It Started Long Before Australia&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;My love of travel goes all the way back to a post-college decision that probably seemed a little crazy to the people around me at the time. Instead of settling into a traditional career path, I packed my bags and moved to Chile. I spent months working in hostels and bed and breakfasts across the country — immersing myself in local life, learning the rhythms of a place completely different from anything I'd known, and meeting people from every corner of the world.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;It was my first real solo travel experience. And it changed everything. I came home with a completely different understanding of the world — and of myself. Travel had shown me that the world was so much bigger and more beautiful than I'd realized — and that I was capable of navigating it on my own terms.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;h2&gt;Ten Years in Hospitality — And What It Taught Me&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;After Chile, I built a career in hospitality. Hotels, specifically — nearly a decade of learning what it means to make people feel truly welcome. To anticipate what someone needs before they even know they need it. To create an environment where a stranger walks in and immediately feels at home.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;I loved that work. But if I'm honest, there was always something missing in the corporate hotel world. The scale of it meant that guests were often numbers on a spreadsheet rather than humans with stories. The personal touch — the part I loved most — got lost in the logistics.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;Then the company I was working for went bankrupt. And as destabilizing as that was, it gave me something unexpected: a moment of stillness. A forced pause in which I had to ask myself a question I'd been too busy to sit with.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;div class="pull-quote"&gt;What do I actually love most about this work?&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;p&gt;The answer came quickly and clearly. It was never the buildings. It was the people.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;h2&gt;The Trip That Showed Me What Was Possible&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;Around the same time, I found myself at a significant crossroads in my personal life. I needed something. I just wasn't sure what. Then I saw it — an Instagram travel influencer I'd followed for years was hosting a group trip to Morocco. Something about it called to me in a way I couldn't quite explain. I didn't know anyone going. I just knew, in that quiet certain way you sometimes know things, that I needed to be on that trip.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;So I booked it.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;What happened in Morocco I can only describe as soul-nourishing. The colors, the chaos, the kindness of strangers, the magic of a place so completely unlike anything I'd ever experienced. But more than the destination — it was the people. A group of strangers who showed up individually and became, over the course of just a few days, something that felt remarkably like community.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;I came home with a renewed sense of self. With friendships I still cherish. And with absolute clarity about something I'd been circling for years: &lt;em&gt;this is what travel can do. And I want to help other people experience exactly this.&lt;/em&gt;&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;h2&gt;And Then There Was Australia&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;If Morocco showed me what was possible in a group, Australia showed me what was possible alone. I'd always dreamed of diving the Great Barrier Reef. So I booked a week-long liveaboard, flew to Queensland, and made that dream a reality.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;After the liveaboard I traveled through Queensland before making my way to Melbourne — a city I'd never visited and had no particular expectations of. What I found there was one of the most unexpectedly beautiful experiences of my life. I fell in love with the city almost immediately. I made incredible connections. I felt, in a way that's hard to articulate, completely at home.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;Australia holds a very special piece of my heart. And I have every intention of going back.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;h2&gt;Why Likeminded Group Travel&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;All of these experiences — Chile, Morocco, Australia, a decade in hospitality, years of creating personal experiences for guests as an Airbnb host — led me here.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;I started Likeminded Group Travel because I believe travel is one of the most powerful tools we have for becoming more fully ourselves. It gets us out of our routines and our comfort zones. It shows us how many different ways there are to live. And perhaps most importantly — it connects us with other human beings in a way that strips away the superficial and gets straight to what matters.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;I believe we are all so much more alike than we are different. We just have to create the conditions to find that common ground. Travel — the right kind of travel, with the right people, in the right places — creates those conditions beautifully.&lt;/p&gt;</p>
+<p class="p1">    &lt;p&gt;That's what Likeminded Group Travel is here to do. Because life is meant to be lived fully. And I can't wait to help you do exactly that.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">    &lt;div class="article-sign"&gt;— Kelsey Fuller, Founder of Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p1">```</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;div class="cta-banner"&gt;</p>
+<p class="p1">    &lt;h2&gt;Ready to find your next adventure?&lt;/h2&gt;</p>
+<p class="p1">    &lt;p&gt;Whether you're dreaming of a solo journey or planning something special with your favorite people — let's start the conversation.&lt;/p&gt;</p>
+<p class="p1">    &lt;div class="cta-buttons"&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white" onclick="showPage('solo')"&gt;Find My Solo Adventure&lt;/a&gt;</p>
+<p class="p1">      &lt;a href="#" class="btn-white-outline" onclick="showPage('group')"&gt;Plan My Group Trip&lt;/a&gt;</p>
+<p class="p1">    &lt;/div&gt;</p>
+<p class="p1">  &lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">  &lt;footer&gt;</p>
+<p class="p1">    &lt;div class="footer-logo"&gt;Likeminded Group Travel&lt;/div&gt;</p>
+<p class="p1">    &lt;div class="footer-tagline"&gt;Change the way you see everything&lt;/div&gt;</p>
+<p class="p1">    &lt;ul class="footer-links"&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('home')"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('solo')"&gt;Solo Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('group')"&gt;Group Travel&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">      &lt;li&gt;&lt;a href="#" onclick="showPage('contact')"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1">    &lt;/ul&gt;</p>
+<p class="p1">    &lt;div class="footer-copy"&gt;© 2025 Likeminded Group Travel · All rights reserved&lt;/div&gt;</p>
+<p class="p1">  &lt;/footer&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">  // Page navigation</p>
+<p class="p1">  function showPage(id) {</p>
+<p class="p1">    document.querySelectorAll('.page').forEach(p =&gt; p.classList.remove('active'));</p>
+<p class="p1">    document.getElementById('page-' + id).classList.add('active');</p>
+<p class="p1">    window.scrollTo({ top: 0, behavior: 'smooth' });</p>
+<p class="p1">  }</p>
+<p class="p2"><br></p>
+<p class="p1">  // Nav scroll effect</p>
+<p class="p1">  window.addEventListener('scroll', () =&gt; {</p>
+<p class="p1">    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY &gt; 20);</p>
+<p class="p1">  });</p>
+<p class="p2"><br></p>
+<p class="p1">  // Contact form toggle</p>
+<p class="p1">  function switchForm(type) {</p>
+<p class="p1">    document.getElementById('form-solo').style.display = type === 'solo' ? 'block' : 'none';</p>
+<p class="p1">    document.getElementById('form-group-travel').style.display = type === 'group' ? 'block' : 'none';</p>
+<p class="p1">    document.querySelectorAll('.toggle-btn').forEach((btn, i) =&gt; {</p>
+<p class="p1">      btn.classList.toggle('active', (type === 'solo' &amp;&amp; i === 0) || (type === 'group' &amp;&amp; i === 1));</p>
+<p class="p1">    });</p>
+<p class="p1">  }</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
